@@ -1,2 +1,4 @@
 # hrbustComputingCenter_training
-计算中心前端培训教学案例
+哈理工计算中心前端培训教学案例
+
+> 移动端页面用Chrome调试器开手机调试查看效果，或用browsersync实现局域网同步在手机参看皆可
