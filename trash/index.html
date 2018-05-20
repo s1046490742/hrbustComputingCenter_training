@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.container .folder{
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				background: url(img/文件.png) no-repeat;
+				background-size: 100px 100px;
+				text-align: center;
+				line-height: 100px;
+			}
+			.recycle{
+				
+				width: 200px;
+				height: 200px;
+				background: url(img/垃圾.png) no-repeat;
+				background-size: 200px 200px;
+				text-align: center;
+				line-height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="folder" id="file_1" draggable="true" ondragstart="drag(event)">1</div>
+			<div class="folder" id="file_2" draggable="true" ondragstart="drag(event)">2</div>
+			<div class="folder" id="file_3" draggable="true" ondragstart="drag(event)">3</div>
+			
+		</div>
+		<div class="recycle" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+		<script type="text/javascript">
+			var id;
+			function drag(e){
+				id = e.target.id
+			}
+			function allowDrop(e){
+				e.preventDefault();
+			}
+			function drop(e){
+				e.preventDefault();
+				var folder = document.getElementById(id);
+				document.getElementsByClassName("container")[0].removeChild(folder);
+			}
+		</script>
+	</body>
+</html>
